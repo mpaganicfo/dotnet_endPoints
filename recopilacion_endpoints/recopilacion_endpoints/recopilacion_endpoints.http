@@ -1,6 +1,0 @@
-@recopilacion_endpoints_HostAddress = http://localhost:5218
-
-GET {{recopilacion_endpoints_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
