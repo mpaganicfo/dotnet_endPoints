@@ -1,4 +1,4 @@
-﻿namespace dotnet_wos_abm_reglas_auditoria_api.Domain.Dtos.Locations
+﻿namespace Domain.Dtos.Locations
 {
     public class LocalidadesDto
     {

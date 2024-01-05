@@ -1,7 +1,10 @@
-﻿using dotnet_wos_abm_reglas_auditoria_api.Application.UseCase.V2.Locations;
-using dotnet_wos_abm_reglas_auditoria_api.Domain.Dtos.Locations;
+﻿using Application.UseCase.Locations;
+using Domain.Dtos.Locations;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Presentation.Controllers
 {
@@ -18,7 +21,10 @@ namespace Presentation.Controllers
         [ProducesResponseType(typeof(List<ProvinciasDto>), StatusCodes.Status201Created)]
         public async Task<IActionResult> Locations()
         {
-            return Ok(await this.mediator.Send(new LocationsQuery()));
+
+            var respuesta = await this.mediator.Send(new LocationsQuery());
+
+            return Ok(respuesta);
         }
     }
 }

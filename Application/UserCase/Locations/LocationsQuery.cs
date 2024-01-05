@@ -1,8 +1,12 @@
-﻿using dotnet_wos_abm_reglas_auditoria_api.Application.Services;
-using dotnet_wos_abm_reglas_auditoria_api.Domain.Dtos.Locations;
+﻿using Application.Services;
+using Domain.Dtos.Locations;
 using MediatR;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace dotnet_wos_abm_reglas_auditoria_api.Application.UseCase.V2.Locations
+namespace Application.UseCase.Locations
 {
     public class LocationsQuery : IRequest<List<ProvinciasDto>>
     {

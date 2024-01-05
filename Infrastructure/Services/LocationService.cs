@@ -1,7 +1,7 @@
-﻿using dotnet_wos_abm_reglas_auditoria_api.Application.Common;
-using dotnet_wos_abm_reglas_auditoria_api.Application.Services;
-using dotnet_wos_abm_reglas_auditoria_api.Domain.Dtos.Locations;
-using dotnet_wos_abm_reglas_auditoria_api.Domain.Exceptions;
+﻿using Application;
+using Application.Services;
+using Domain.Dtos.Locations;
+using Domain.Exceptions;
 using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace dotnet_wos_abm_reglas_auditoria_api.Infrastructure.Services
+namespace Infrastructure.Services
 {
     public class LocationService : ILocationService
     {
