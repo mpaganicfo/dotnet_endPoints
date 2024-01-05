@@ -3,14 +3,13 @@ using dotnet_wos_abm_reglas_auditoria_api.Domain.Dtos.Locations;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace dotnet_wos_abm_reglas_auditoria_api.Controllers.V2
+namespace Presentation.Controllers
 {
-
-
     public class ReglasController : Controller
     {
         private readonly IMediator mediator;
-        public ReglasController(IMediator mediator) 
+
+        public ReglasController(IMediator mediator)
         {
             this.mediator = mediator;
         }
@@ -19,7 +18,6 @@ namespace dotnet_wos_abm_reglas_auditoria_api.Controllers.V2
         [ProducesResponseType(typeof(List<ProvinciasDto>), StatusCodes.Status201Created)]
         public async Task<IActionResult> Locations()
         {
-            
             return Ok(await this.mediator.Send(new LocationsQuery()));
         }
     }
