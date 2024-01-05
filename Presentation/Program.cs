@@ -20,7 +20,7 @@ builder.Services.AddMemoryCache();
 
 builder.Services.AddHttpClient(ApiNames.Location, client =>
 {
-    client.BaseAddress = new System.Uri("www.baseUrl");
+    client.BaseAddress = new System.Uri("www.baseUrl");//salir del app settings
 });
 
 var app = builder.Build();
