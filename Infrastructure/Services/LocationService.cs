@@ -1,4 +1,4 @@
-﻿using Application;
+﻿using Application.Common;
 using Application.Services;
 using Domain.Dtos.Locations;
 using Domain.Exceptions;

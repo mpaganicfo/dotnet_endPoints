@@ -1,4 +1,4 @@
-﻿using Application;
+﻿using Application.Common;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,8 +10,7 @@ namespace Presentation.Bootstrap
         {
             services.AddHttpClient(ApiNames.Location, client =>
             {
-                //client.BaseAddress = new System.Uri(configuration.GetValue<string>("Location:url"));
-                client.BaseAddress = new System.Uri("https://apisqa.andreani.com/v1/localidades");
+                client.BaseAddress = new System.Uri(configuration.GetValue<string>("Location:url"));
             });
 
             return services;
