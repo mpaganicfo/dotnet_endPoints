@@ -1,0 +1,29 @@
+{
+	"info": {
+		"_postman_id": "0ff51d7a-e91f-462e-9c47-a45612adf8aa",
+		"name": "locations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32200623"
+	},
+	"item": [
+		{
+			"name": "https://localhost:7017/locations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/locations",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"locations"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
