@@ -1,27 +1,24 @@
 ﻿
-using dotnet_endPoints.Application.Services;
-using dotnet_endPoints.Application.UseCase.V2.Helper;
-using dotnet_endPoints.Domain.Dtos.Operacion;
-using dotnet_endPoints.Domain.Dtos;
-using dotnet_endPoints.Domain.Enums;
+using Application.Services;
+using Domain.Dtos;
+using Domain.Enums;
 using MediatR;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace dotnet_endPoints.Application.UseCase.Queries.GetAll
+namespace Application.UseCase.Queries.GetAll
 {
-    public class GetAllOperacionesQuery : BaseQuery, IRequest<Response<List<PlantaOperacionDto>>>
+    public class GetAllReglasQuery : BaseQuery, IRequest<Response<List<BaseReglaDto>>>
     {
         public int Start { get; set; }
 
         public int Length { get; set; }
     }
 
-    public class GetAllReglasQueryHandler : BaseGetAllReglasQuery, IRequestHandler<GetAllOperacionesQuery, Response<List<BaseReglaDto>>>
+    public class GetAllReglasQueryHandler : BaseGetAllReglasQuery, IRequestHandler<GetAllReglasQuery, Response<List<BaseReglaDto>>>
     {
         private readonly ILogger<GetAllReglasQueryHandler> _logger;
 
@@ -30,7 +27,7 @@ namespace dotnet_endPoints.Application.UseCase.Queries.GetAll
             _logger = logger;
         }
 
-        public async Task<Response<List<BaseReglaDto>>> Handle(GetAllOperacionesQuery request, CancellationToken cancellationToken)
+        public async Task<Response<List<BaseReglaDto>>> Handle(GetAllReglasQuery request, CancellationToken cancellationToken)
         {
             var response = new Response<List<BaseReglaDto>>();
 

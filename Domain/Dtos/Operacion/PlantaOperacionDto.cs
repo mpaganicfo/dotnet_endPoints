@@ -1,4 +1,4 @@
-﻿namespace dotnet_endPoints.Domain.Dtos.Operacion
+﻿namespace Domain.Dtos.Operacion
 {
     public class PlantaOperacionDto
     {

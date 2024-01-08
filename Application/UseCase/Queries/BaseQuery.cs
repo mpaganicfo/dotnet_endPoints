@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dotnet_wos_abm_reglas_auditoria_api.Application.UseCase.V2.Queries
+namespace Application.UseCase.Queries
 {
     public abstract class BaseQuery : BaseCommand
     {

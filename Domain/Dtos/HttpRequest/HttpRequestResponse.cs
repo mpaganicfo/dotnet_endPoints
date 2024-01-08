@@ -1,4 +1,4 @@
-﻿namespace dotnet_endPoints.Dtos.HttpRequest
+﻿namespace Domain.Dtos.HttpRequest
 {
     public class HttpRequestResponse<T>
     {

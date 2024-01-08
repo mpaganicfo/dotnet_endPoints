@@ -1,0 +1,23 @@
+DataAccessRegistry:
+  ReadOnlyConnection: "Data Source=DBMOBPACKTEST.andreani.com.ar;Initial Catalog=MobilePacking;Persist Security Info=True;User ID=User_MobilePacking;Password=okaXlqyHC4jIJHTFZEQ5"
+  TransactionalConnection: "Data Source=DBMOBPACKTEST.andreani.com.ar;Initial Catalog=MobilePacking;Persist Security Info=True;User ID=User_MobilePacking;Password=okaXlqyHC4jIJHTFZEQ5"
+  ProviderName: System.Data.SqlClient
+
+OpenIdConnect:
+  - AuthScheme: "AzureADB2C"
+    ClientID: "93701da9-25db-4d3e-a227-896073889dc4"
+    Flow: "B2C_1A_signup_signinaad"
+    Issuer: "https://andreanib2cdev.b2clogin.com/226a3c28-81b4-4606-9a63-040f553bb647/v2.0/"
+    Tenant: "andreanib2cdev"
+    ValidateAudience: false
+    ValidateIssuer: true
+    ValidateIssuerSingingKey: false
+
+Location:
+    url: "https://apisqa.andreani.com/v1/localidades"
+
+PlantaOperacion:
+ BaseUrl: "https://mascara-sce-planta-operacion-api.apps.ocptest.andreani.com.ar"
+ AuthorizationSchema: "Bearer"
+ GetById: "api/v1/PlantaOperacion/{0}"
+ GetAll: "api/v1/PlantaOperacion"

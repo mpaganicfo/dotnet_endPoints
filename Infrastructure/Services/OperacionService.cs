@@ -1,8 +1,9 @@
-﻿using dotnet_wos_abm_reglas_auditoria_api.Application.Common;
-using dotnet_wos_abm_reglas_auditoria_api.Application.Services;
-using dotnet_wos_abm_reglas_auditoria_api.Domain.Dtos.HttpRequest;
-using dotnet_wos_abm_reglas_auditoria_api.Domain.Dtos.Operacion;
-using dotnet_wos_abm_reglas_auditoria_api.Infrastructure.Configuration;
+﻿
+using Application.Common;
+using Application.Services;
+using Domain.Dtos.HttpRequest;
+using Domain.Dtos.Operacion;
+using Infrastructure.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,8 @@ using System.Security.Policy;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using static Slapper.AutoMapper;
 
-namespace dotnet_wos_abm_reglas_auditoria_api.Infrastructure.Services
+namespace Infrastructure.Services
 {
     public class OperacionService : IOperacionService
     {
@@ -29,37 +29,7 @@ namespace dotnet_wos_abm_reglas_auditoria_api.Infrastructure.Services
             _logger = logger;
         }
 
-        public async Task<HttpRequestResponse<PlantaOperacionDto>> GetByIdAsync(int id, string token)
-        {
-            try
-            {
-                var url = string.Format(_config.GetByIdTemplate, id);
-                _logger.LogInformation("GetByIdOperation, requestUrl: {url}", url);
-                var request = await RequestAsync(url, token);
-                _logger.LogInformation("GetByIdOperation result  StatusCode: {StatusCode}, ReasonPhrase: {ReasonPhrase}", request.StatusCode, request.ReasonPhrase);
-
-                if (!request.IsSuccessStatusCode)
-                {
-                    return new HttpRequestResponse<PlantaOperacionDto>()
-                    {
-                        Message = $"No se ha podido Obtener la planta de Operacion con Id {id}: {request.ReasonPhrase}"
-                    };
-                }
-
-                return new HttpRequestResponse<PlantaOperacionDto>()
-                {
-                    Content = await DeserealizeAsync<PlantaOperacionDto>(request.Content)
-                };
-            }
-            catch (Exception ex)
-            {
-
-                return new HttpRequestResponse<PlantaOperacionDto>()
-                {
-                    Message = GetErrorFromException(ex, $"Se ha producido un error obteniendo la Platan de operacion por Id {id}: {ex.Message} ")
-                };
-            }
-        }
+      
 
         public async Task<HttpRequestResponse<IEnumerable<PlantaOperacionDto>>> GetAllAsync(string token)
         {
