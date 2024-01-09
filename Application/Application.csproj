@@ -7,12 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="UseCase\Commands\Delete\**" />
-    <Compile Remove="UseCase\Commands\Update\**" />
-    <EmbeddedResource Remove="UseCase\Commands\Delete\**" />
-    <EmbeddedResource Remove="UseCase\Commands\Update\**" />
-    <None Remove="UseCase\Commands\Delete\**" />
-    <None Remove="UseCase\Commands\Update\**" />
+    <Compile Remove="UseCase\Commands\**" />
+    <EmbeddedResource Remove="UseCase\Commands\**" />
+    <None Remove="UseCase\Commands\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,10 +18,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="UseCase\Commands\" />
   </ItemGroup>
 
 </Project>

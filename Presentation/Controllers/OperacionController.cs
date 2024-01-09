@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using Application.UseCase.Queries.GetAll;
+using Application.UseCase.Queries;
 
 namespace Presentation.Controllers
 {
@@ -16,9 +16,9 @@ namespace Presentation.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Operations()
+        public async Task<IActionResult> GetOperations()
         {
-            var response = await this.mediator.Send(request: new GetAllReglasQuery());
+            var response = await this.mediator.Send(new OperationsQuery());
             return Ok(response);
         }
 

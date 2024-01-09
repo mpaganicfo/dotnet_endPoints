@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    public class OperacionService : IOperacionService
+    public class OperacionService : IOperationService
     {
         private readonly IHttpClientFactory _factory;
         private readonly ILogger<OperacionService> _logger;

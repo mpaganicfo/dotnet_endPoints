@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Application.Services
 {
-    public interface IOperacionService
+    public interface IOperationService
     {
         //Task<HttpRequestResponse<PlantaOperacionDto>> GetByIdAsync(int id, string token);
 

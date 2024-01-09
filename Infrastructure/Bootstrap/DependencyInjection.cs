@@ -9,7 +9,7 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddScoped<IOperacionService, OperacionService>();
+        services.AddScoped<IOperationService, OperacionService>();
         services.AddMemoryCache();
 
         return services;
