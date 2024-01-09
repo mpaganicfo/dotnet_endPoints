@@ -8,18 +8,20 @@ using System.Threading.Tasks;
 
 namespace Presentation.Controllers
 {
-    public class ReglasController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class LocationsController : Controller
     {
         private readonly IMediator mediator;
 
-        public ReglasController(IMediator mediator)
+        public LocationsController(IMediator mediator)
         {
             this.mediator = mediator;
         }
 
-        [HttpGet("locations")]
+        [HttpGet]
         [ProducesResponseType(typeof(List<ProvinciasDto>), StatusCodes.Status201Created)]
-        public async Task<IActionResult> Locations()
+        public async Task<IActionResult> GetLocations()
         {
 
             var respuesta = await this.mediator.Send(new LocationsQuery());
