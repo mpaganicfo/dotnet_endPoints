@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Infrastructure.Configuration
+﻿namespace Infrastructure.Configuration
 {
     public class PlantaOperationConfiguration
     {

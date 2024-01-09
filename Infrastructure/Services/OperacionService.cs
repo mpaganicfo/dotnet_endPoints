@@ -5,14 +5,9 @@ using Domain.Dtos.HttpRequest;
 using Domain.Dtos.Operacion;
 using Infrastructure.Configuration;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Security.Policy;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
@@ -28,8 +23,6 @@ namespace Infrastructure.Services
             _config = config;
             _logger = logger;
         }
-
-      
 
         public async Task<HttpRequestResponse<IEnumerable<PlantaOperacionDto>>> GetAllAsync(string token)
         {
