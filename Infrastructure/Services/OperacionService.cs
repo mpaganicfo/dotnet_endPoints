@@ -24,6 +24,38 @@ namespace Infrastructure.Services
             _logger = logger;
         }
 
+        public async Task<HttpRequestResponse<PlantaOperacionDto>> GetByIdAsync(int id, string token)
+        {
+            try
+            {
+                var url = string.Format(_config.GetByIdTemplate, id);
+                _logger.LogInformation("GetByIdOperation, requestUrl: {url}", url);
+                var request = await RequestAsync(url, token);
+                _logger.LogInformation("GetByIdOperation result  StatusCode: {StatusCode}, ReasonPhrase: {ReasonPhrase}", request.StatusCode, request.ReasonPhrase);
+
+                if (!request.IsSuccessStatusCode)
+                {
+                    return new HttpRequestResponse<PlantaOperacionDto>()
+                    {
+                        Message = $"No se ha podido Obtener la planta de Operacion con Id {id}: {request.ReasonPhrase}"
+                    };
+                }
+
+                return new HttpRequestResponse<PlantaOperacionDto>()
+                {
+                    Content = await DeserealizeAsync<PlantaOperacionDto>(request.Content)
+                };
+            }
+            catch (Exception ex)
+            {
+
+                return new HttpRequestResponse<PlantaOperacionDto>()
+                {
+                    Message = GetErrorFromException(ex, $"Se ha producido un error obteniendo la Platan de operacion por Id {id}: {ex.Message} ")
+                };
+            }
+        }
+
         public async Task<HttpRequestResponse<IEnumerable<PlantaOperacionDto>>> GetAllAsync(string token)
         {
             try

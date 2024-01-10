@@ -22,5 +22,12 @@ namespace Presentation.Controllers
             return Ok(response);
         }
 
+        [HttpGet]
+        [Route("getById")]
+        public async Task<IActionResult> GetOperationById()
+        {
+            var response = await this.mediator.Send(new OperationQueryById());
+            return Ok(response);
+        }
     }
 }

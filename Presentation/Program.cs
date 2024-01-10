@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Application.Bootstrap;
 using Infrastructure.Bootstrap;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.WebHost.ConfigureAppConfiguration(builder =>
@@ -15,7 +16,7 @@ builder.Services.HttpClientsConfiguration(builder.Configuration);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+//builder.Services.AddOpenIdConnectAuthentication(builder.Configuration);
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

@@ -7,7 +7,7 @@ namespace Application.Services
 {
     public interface IOperationService
     {
-        //Task<HttpRequestResponse<PlantaOperacionDto>> GetByIdAsync(int id, string token);
+        Task<HttpRequestResponse<PlantaOperacionDto>> GetByIdAsync(int id, string token);
 
         Task<HttpRequestResponse<IEnumerable<PlantaOperacionDto>>> GetAllAsync(string token);
     }
